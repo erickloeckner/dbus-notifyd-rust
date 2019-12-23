@@ -85,7 +85,7 @@ fn build_ui(application: &gtk::Application) {
             //~ let member_name = Member::new("Notify");
             let (sender, _, _, title, body): (&str, u32, &str, &str, &str) = msg.read5().unwrap();
             
-            if body == "Inbound Call" {
+            if title == "Inbound Call" || body == "Inbound Call" {
                 println!("message: {} | {} : {}", sender, title, body);
                 let mut cwd = find_cwd(PROJECT_NAME);
                 let mut script = find_cwd(PROJECT_NAME);
